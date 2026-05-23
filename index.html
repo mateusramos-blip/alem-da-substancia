@@ -35,7 +35,8 @@
             
             <div class="mini-cards">
                 <div class="card-stat">
-                    <h2>179</h2> 
+                    <!-- CORREÇÃO AQUI: Adicionado id="contador" para o JavaScript atualizar -->
+                    <h2 id="contador">179</h2> 
                     <p>Visitantes Registrados</p>
                 </div>
                 <div class="card-stat">
@@ -78,7 +79,7 @@
                 <div class="card-border-top"></div>
                 <span class="card-tag">Infanto-Juvenil</span>
                 <h3>CAPSi</h3>
-                <p>Esse é o lugar direcionado para crianças, adolescentes e jovens (até os 17/18 anos) que precisam de suporte emocional ou enfrentam sofrimento psíquico grave. Oferece atendimento especializado, oficinas terapêuticas e também apoia as famílias.</p>
+                <p>Esse é o lugar direcionado para crianças, adolescentes e jovens (até os 17/18 anos) que precisam de suporte emotional ou enfrentam sofrimento psíquico grave. Oferece atendimento especializado, oficinas terapêuticas e também apoia as famílias.</p>
             </div>
             
             <div class="info-card">
@@ -90,7 +91,6 @@
         </div>
     </section>
 
-    <!-- SEÇÕES ADICIONAIS (Esqueletos para o menu funcionar) -->
     <!-- SEÇÃO VÍDEOS -->
     <section id="videos" class="generic-section">
         <span class="section-badge">Vídeos</span>
@@ -98,11 +98,8 @@
         <p class="section-subtitle">Assista a conteúdos educativos e informativos sobre saúde mental e bem-estar.</p>
 
         <div class="videos-cards-container">
-            
-            <!-- Card de Vídeo 1 -->
             <div class="video-card">
                 <div class="video-preview">
-                    <!-- Imagem de capa do vídeo (substitua pelo link real ou use o embed do YouTube depois) -->
                     <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=400" alt="Capa do Vídeo">
                     <div class="play-icon">▶</div>
                 </div>
@@ -114,7 +111,6 @@
                 </div>
             </div>
 
-            <!-- Card de Vídeo 2 -->
             <div class="video-card">
                 <div class="video-preview">
                     <img src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?q=80&w=400" alt="Capa do Vídeo">
@@ -128,7 +124,6 @@
                 </div>
             </div>
 
-            <!-- Card de Vídeo 3 -->
             <div class="video-card">
                 <div class="video-preview">
                     <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=400" alt="Capa do Vídeo">
@@ -141,7 +136,6 @@
                     <a href="#" class="btn-watch">Assistir Vídeo</a>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -152,11 +146,9 @@
         <p class="section-subtitle">Compartilhe sua visão, mensagem de apoio ou sugestão sobre o nosso espaço.</p>
 
         <div class="comments-container">
-            
-            <!-- Lado Esquerdo: Formulário -->
             <div class="comment-form-box">
                 <h3>Sua opinião importa</h3>
-                <form class="comment-form" onsubmit="event.preventDefault(); alert('Obrigado pelo seu depoimento! Ele foi enviado para análise.');">
+                <form class="comment-form">
                     <div class="input-group">
                         <label for="comentario-nome">Nome (ou Anônimo)</label>
                         <input type="text" id="comentario-nome" placeholder="Ex: Maria Souza" required>
@@ -169,29 +161,9 @@
                 </form>
             </div>
 
-            <!-- Lado Direito: Mural de Comentários Fixados -->
             <div class="comments-mural">
-                
-                <!-- Comentário 1 -->
-                <div class="mural-card">
-                    <div class="mural-card-header">
-                        <strong>Ana Carolina M.</strong>
-                        <span class="mural-date">Hoje</span>
-                    </div>
-                    <p>"Parabéns pela iniciativa! É muito difícil encontrar as informações sobre os CAPS de Resende de forma tão clara e organizada em um só lugar. Esse site vai ajudar muita gente."</p>
-                </div>
-
-                <!-- Comentário 2 -->
-                <div class="mural-card">
-                    <div class="mural-card-header">
-                        <strong>Visitante Anônimo</strong>
-                        <span class="mural-date">Ontem</span>
-                    </div>
-                    <p>"O design transmite muita paz e acolhimento. A divisão entre CAPS AD e Casa Aberta ficou excelente, tirou muitas dúvidas que eu tinha sobre onde buscar apoio."</p>
-                </div>
-
+                <!-- Os depoimentos vindos do banco de dados serão injetados aqui -->
             </div>
-
         </div>
     </section>
 
@@ -240,5 +212,68 @@
         </div>
     </section>
 
+    <!-- Conexão do Front-end com o Back-end em Python -->
+    <script>
+        const API_URL = "http://127.0.0.1:5000/api";
+
+        document.addEventListener("DOMContentLoaded", function() {
+            // --- 1. ATUALIZAR CONTADOR DE VISITANTES ---
+            fetch(`${API_URL}/visita`, { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("contador").innerText = data.total_visitantes;
+                })
+                .catch(err => console.error("Erro ao atualizar contador:", err));
+
+            // --- 2. CARREGAR DEPOIMENTOS DO BANCO ---
+            carregarDepoimentos();
+
+            // --- 3. EVENTO DE ENVIAR NOVO DEPOIMENTO ---
+            const form = document.querySelector(".comment-form");
+
+            form.addEventListener("submit", function(event) {
+                event.preventDefault();
+                
+                const nomeInput = document.getElementById("comentario-nome").value;
+                const textoInput = document.getElementById("comentario-texto").value;
+
+                fetch(`${API_URL}/depoimentos`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ nome: nomeInput, texto: textoInput })
+                })
+                .then(response => {
+                    if (response.ok) {
+                        form.reset(); 
+                        carregarDepoimentos(); 
+                    }
+                })
+                .catch(err => console.error("Erro ao enviar depoimento:", err));
+            });
+        });
+
+        function carregarDepoimentos() {
+            fetch(`${API_URL}/depoimentos`)
+                .then(response => response.json())
+                .then(depoimentos => {
+                    const mural = document.querySelector(".comments-mural");
+                    mural.innerHTML = ""; 
+
+                    depoimentos.forEach(depo => {
+                        const card = document.createElement("div");
+                        card.className = "mural-card";
+                        card.innerHTML = `
+                            <div class="mural-card-header">
+                                <strong>${depo.nome}</strong>
+                                <span class="mural-date">Recentemente</span>
+                            </div>
+                            <p>"${depo.texto}"</p>
+                        `;
+                        mural.appendChild(card);
+                    });
+                })
+                .catch(err => console.error("Erro ao carregar depoimentos:", err));
+        }
+    </script>
 </body>
 </html>
