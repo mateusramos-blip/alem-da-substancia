@@ -570,3 +570,80 @@ body {
     line-height: 1.6;
     font-style: italic;
 }
+
+/* ==========================================================================
+   MODAL DE VÍDEOS (JANELA FLUTUANTE)
+   ========================================================================== */
+
+/* Estilo do botão de assistir modificado para parecer clicável se for button */
+.btn-watch {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-family: inherit;
+}
+
+.video-modal {
+    display: none; /* Escondido por padrão */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro semi-transparente */
+    z-index: 2000; /* Fica acima de tudo, inclusive da navbar */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.video-modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Largura máxima do player */
+    background-color: #000;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+/* Botão de Fechar (X) */
+.video-modal-close {
+    position: absolute;
+    top: -10px;
+    right: 15px;
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 2001;
+    transition: color 0.2s;
+}
+
+.video-modal-close:hover {
+    color: #81c784; /* Muda para o verde claro do seu tema ao passar o mouse */
+}
+
+/* Container para manter a proporção 16:9 do vídeo na tela cheia ou mobile */
+.video-responsive-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Proporção 16:9 */
+    padding-top: 30px; 
+    height: 0; 
+    overflow: hidden;
+}
+
+.video-responsive-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Ajuste sutil nas miniaturas clicáveis */
+.video-preview.btn-play-trigger {
+    cursor: pointer;
+}

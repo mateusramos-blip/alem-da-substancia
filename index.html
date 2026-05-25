@@ -99,45 +99,54 @@
 
         <div class="videos-cards-container">
             <div class="video-card">
-                <div class="video-preview">
-                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=400" alt="Capa do Vídeo">
+                <div class="video-preview btn-play-trigger" data-video="https://youtube.com/embed/IJjCyYKkbZU?si=vxh-BDA81wg-3qQN">
+                    <img src="https://img.youtube.com/vi/IJjCyYKkbZU/0.jpg" alt="Capa do Vídeo">
                     <div class="play-icon">▶</div>
                 </div>
                 <div class="video-content">
                     <span class="video-tag">Introdução</span>
                     <h3>O que é Saúde Mental?</h3>
                     <p>Entenda os conceitos básicos sobre bem-estar emocional e a importância de quebrar tabus em torno do assunto.</p>
-                    <a href="#" class="btn-watch">Assistir Vídeo</a>
+                    <button class="btn-watch btn-play-trigger" data-video="https://youtube.com/embed/IJjCyYKkbZU?si=vxh-BDA81wg-3qQN">Assistir Vídeo</button>
                 </div>
             </div>
 
             <div class="video-card">
-                <div class="video-preview">
-                    <img src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?q=80&w=400" alt="Capa do Vídeo">
+                <div class="video-preview btn-play-trigger" data-video="https://youtube.com/embed/HHHiIle4SVA?si=tJ8ctzIvyEenSN2N">
+                    <img src="https://img.youtube.com/vi/HHHiIle4SVA/0.jpg" alt="Capa do Vídeo">
                     <div class="play-icon">▶</div>
                 </div>
                 <div class="video-content">
                     <span class="video-tag">Acolhimento</span>
                     <h3>Como funciona o CAPS?</h3>
                     <p>Conheça por dentro o atendimento dos Centros de Atenção Psicossocial e saiba como procurar ajuda especializada.</p>
-                    <a href="#" class="btn-watch">Assistir Vídeo</a>
+                    <button class="btn-watch btn-play-trigger" data-video="https://youtube.com/embed/HHHiIle4SVA?si=tJ8ctzIvyEenSN2N">Assistir Vídeo</button>
                 </div>
             </div>
 
             <div class="video-card">
-                <div class="video-preview">
-                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=400" alt="Capa do Vídeo">
+                <div class="video-preview btn-play-trigger" data-video="https://youtube.com/embed/26smId96smo?si=rQtb4ltxumGqIPi2">
+                    <img src="https://img.youtube.com/vi/26smId96smo/0.jpg" alt="Capa do Vídeo">
                     <div class="play-icon">▶</div>
                 </div>
                 <div class="video-content">
                     <span class="video-tag">Prevenção</span>
                     <h3>Práticas de Autocuidado</h3>
                     <p>Pequenas ações e hábitos do dia a dia que ajudam a fortalecer sua mente e ativar momentos de calma.</p>
-                    <a href="#" class="btn-watch">Assistir Vídeo</a>
+                    <button class="btn-watch btn-play-trigger" data-video="https://youtube.com/embed/26smId96smo?si=rQtb4ltxumGqIPi2">Assistir Vídeo</button>
                 </div>
             </div>
         </div>
     </section>
+
+    <div id="videoModal" class="video-modal">
+        <div class="video-modal-content">
+            <span class="video-modal-close">&times;</span>
+            <div class="video-responsive-container">
+                <iframe id="videoPlayer" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
 
     <!-- SEÇÃO COMENTÁRIOS -->
     <section id="sobre" class="generic-section">
@@ -214,7 +223,10 @@
 
     <!-- Conexão do Front-end com o Back-end em Python -->
     <script>
-        const API_URL = "http://127.0.0.1:5000/api";
+        // Se o site estiver rodando no Render, usa o link do servidor deles. Se for no seu PC, usa o local.
+        const API_URL = window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost"
+            ? "http://127.0.0.1:5000/api"
+            : `${window.location.origin}/api`;
 
         document.addEventListener("DOMContentLoaded", function() {
             // --- 1. ATUALIZAR CONTADOR DE VISITANTES ---
@@ -274,6 +286,42 @@
                 })
                 .catch(err => console.error("Erro ao carregar depoimentos:", err));
         }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            // ... (Seu código existente do contador e depoimentos permanece aqui) ...
+
+            // --- 4. LÓGICA DO MODAL DE VÍDEOS ---
+            const modal = document.getElementById("videoModal");
+            const videoPlayer = document.getElementById("videoPlayer");
+            const closeBtn = document.querySelector(".video-modal-close");
+            const triggers = document.querySelectorAll(".btn-play-trigger");
+
+            // Abrir o modal ao clicar no botão ou na imagem
+            triggers.forEach(trigger => {
+                trigger.addEventListener("click", function() {
+                    const videoUrl = this.getAttribute("data-video");
+                    // Adiciona autoplay para o vídeo começar sozinho ao abrir
+                    videoPlayer.src = `${videoUrl}?autoplay=1`; 
+                    modal.style.display = "flex";
+                });
+            });
+
+            // Fechar o modal ao clicar no 'X'
+            closeBtn.addEventListener("click", fecharModal);
+
+            // Fechar o modal ao clicar fora da janela do vídeo
+            window.addEventListener("click", function(event) {
+                if (event.target === modal) {
+                    fecharModal();
+                }
+            });
+
+            function fecharModal() {
+                modal.style.display = "none";
+                videoPlayer.src = ""; // Reseta o src para o vídeo parar de tocar no fundo
+            }
+        });
     </script>
+    
 </body>
 </html>
