@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import sqlite3
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder=".", static_folder=".")
 CORS(app)  # Permite que o seu index.html converse com o Python sem bloqueios de segurança
 
 DATABASE = 'data/database.db'
