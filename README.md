@@ -57,7 +57,7 @@ Para projetos pequenos ou quando você está trabalhando em poucas iterações, 
 Quando o projeto crescer e houver várias versões, funcionalidades e releases, o mais comum é criar um arquivo separado `CHANGELOG.md` para manter o histórico de alterações longo e evitar um `README` muito extenso.
 
 ### Recomendação para este repositório
-- Manter o changelog dentro do `README.md` por enquanto é uma boa escolha.
+- Manter o changelog dentro do `README.md` por enquanto é a opção mais prática.
 - Se o projeto evoluir para múltiplas versões ou exigir registros formais de release, então crie um `CHANGELOG.md` e use o `README.md` apenas para visão geral, instalação e uso.
 
 ## Observações finais

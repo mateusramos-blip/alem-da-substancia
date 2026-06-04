@@ -1,4 +1,4 @@
-/* -------------------------------------------------------------
+﻿/* -------------------------------------------------------------
    Brand palette and global style variables
    ------------------------------------------------------------- */
 :root {
@@ -18,15 +18,13 @@
 
 @keyframes wave {
     0% {
-        background: linear-gradient(90deg, var(--secondary-dark) 0%, var(--secondary) 50%, var(--secondary-light) 100%);
-        background-position: -100% 0;
+        background-position: 0% 0;
     }
     50% {
-        background-position: 100% 0;
+        background-position: 250% 0;
     }
     100% {
-        background: linear-gradient(90deg, var(--secondary-dark) 0%, var(--secondary) 50%, var(--secondary-light) 100%);
-        background-position: -100% 0;
+        background-position: 0% 0;
     }
 }
 
@@ -348,8 +346,8 @@ button {
     left: 0;
     width: 100%;
     height: 6px;
-    background: linear-gradient(90deg, var(--secondary-dark), var(--secondary), var(--secondary-light));
-    background-size: 200% 100%;
+    background: linear-gradient(90deg, var(--secondary-dark), #7aa8b2, var(--secondary), #c5dfe7, var(--secondary-light), #8bb5b8);
+    background-size: 300% 100%;
     animation: wave 4s ease-in-out infinite;
 }
 
@@ -401,7 +399,6 @@ button {
 }
 
 .video-card {
-    position: relative;
     background: var(--surface);
     border-radius: 24px;
     overflow: hidden;
@@ -506,20 +503,24 @@ button {
     width: calc(100% - 200px);
     max-width: 1400px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(280px, 1fr) minmax(320px, 1fr);
     gap: 38px;
     text-align: left;
     margin: 0 auto;
 }
 
 .comment-form-box {
-    position: relative;
+    width: 70%;
+    max-width: 760px;
+    margin: 0 auto;
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 28px;
     padding: 38px;
     box-shadow: 0 16px 40px var(--shadow);
-    overflow: hidden;
+    /* centralizar o formulário dentro do container */
+    grid-column: 1 / -1;
+    justify-self: center;
 }
 
 .comment-form-box h3 {
@@ -712,8 +713,7 @@ button {
 
     .comments-container {
         width: calc(100% - 32px);
-        display: flex;
-        flex-direction: column;
+        display: block;
     }
 }
 
