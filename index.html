@@ -289,7 +289,7 @@
             const modal = document.getElementById("videoModal");
             const videoPlayer = document.getElementById("videoPlayer");
             const closeBtn = document.querySelector(".video-modal-close");
-            const triggers = document.querySelectorAll(".btn-play-trigger");
+            const triggers = document.querySelectorAll(".btn-watch");
 
             function closeModal() {
                 modal.style.display = "none";
@@ -297,10 +297,12 @@
             }
 
             triggers.forEach((trigger) => {
-                trigger.addEventListener("click", () => {
+                trigger.addEventListener("click", (e) => {
                     const videoUrl = trigger.getAttribute("data-video");
-                    videoPlayer.src = `${videoUrl}?autoplay=1`;
-                    modal.style.display = "flex";
+                    if (videoUrl) {
+                        videoPlayer.src = `${videoUrl}?autoplay=1`;
+                        modal.style.display = "flex";
+                    }
                 });
             });
 
@@ -317,6 +319,21 @@
             await loadDepoimentos();
             document.querySelector(".comment-form").addEventListener("submit", submitDepoimento);
             initializeVideoModal();
+        });
+
+        // Make video preview clicks open the video link in a new tab,
+        // while the "Assistir Vídeo" button opens the modal player.
+        document.addEventListener("click", (e) => {
+            // If a preview or its children were clicked, find the closest preview element
+            const preview = e.target.closest('.video-preview');
+            if (preview) {
+                const videoUrl = preview.getAttribute('data-video');
+                if (videoUrl) {
+                    // open in a new tab
+                    window.open(videoUrl, '_blank', 'noopener');
+                }
+            }
+        });
     </script>
     
 </body>
