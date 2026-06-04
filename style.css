@@ -8,7 +8,9 @@
     --text: #24302a;
     --text-muted: #5f6b64;
     --primary: #5d826e;
-    --secondary: #4F7380; /* updated to 0xFF4F7380 */
+    --secondary: #96B8C0;
+    --secondary-dark: #5a7a85;
+    --secondary-light: #D0E4EC;
     --accent: #a15f47;
     --border: #dad6c9;
     --shadow: rgba(36, 48, 42, 0.08);
@@ -122,7 +124,7 @@ button {
     margin-bottom: 24px;
     padding: 8px 18px;
     border-radius: 999px;
-    background: rgba(200, 176, 146, 0.18);
+    background: rgba(150, 184, 192, 0.15);
     color: var(--primary);
     font-size: 12px;
     font-weight: 700;
@@ -184,7 +186,7 @@ button {
 .btn-secondary {
     border: 2px solid var(--secondary);
     color: var(--text);
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(150, 184, 192, 0.12);
 }
 
 .btn-secondary:hover {
@@ -332,7 +334,7 @@ button {
     left: 0;
     width: 100%;
     height: 6px;
-    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    background: linear-gradient(90deg, var(--secondary-dark), var(--secondary), var(--secondary-light));
 }
 
 .info-card h3,
@@ -362,7 +364,7 @@ button {
     font-size: 0.75rem;
     font-weight: 700;
     color: var(--primary);
-    background: rgba(200, 176, 146, 0.18);
+    background: rgba(150, 184, 192, 0.18);
     text-transform: uppercase;
     margin-bottom: 18px;
 }
@@ -446,7 +448,7 @@ button {
     font-size: 0.72rem;
     font-weight: 700;
     color: var(--primary);
-    background: rgba(200, 176, 146, 0.18);
+    background: rgba(150, 184, 192, 0.18);
     padding: 6px 12px;
     border-radius: 999px;
     text-transform: uppercase;
@@ -484,12 +486,13 @@ button {
    Comments and testimonials
    ------------------------------------------------------------- */
 .comments-container {
-    width: 100%;
-    max-width: 1200px;
+    width: calc(100% - 200px);
+    max-width: 1400px;
     display: grid;
     grid-template-columns: minmax(280px, 1fr) minmax(320px, 1fr);
     gap: 38px;
     text-align: left;
+    margin: 0 auto;
 }
 
 .comment-form-box {
@@ -693,9 +696,10 @@ button {
     }
 
     .comments-container {
+        width: calc(100% - 32px);
         display: block;
     }
-}
+}}
 
 @media (max-width: 600px) {
     .navbar {
