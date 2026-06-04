@@ -282,21 +282,68 @@
             }
         }
 
+        // Easing function for smooth scroll (ease-in-out-cubic)
+        function easeInOutCubic(t) {
+            return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+        }
+
+        // Smooth scroll with easing on wheel
+        let isScrolling = false;
+        let scrollVelocity = 0;
+        let lastScrollTime = 0;
+
+        window.addEventListener("wheel", (e) => {
+            e.preventDefault();
+
+            const delta = e.deltaY > 0 ? 60 : -60; // Scroll amount per wheel tick
+            const currentTime = Date.now();
+            const timeDelta = currentTime - lastScrollTime;
+
+            // Build velocity based on wheel movement
+            scrollVelocity += delta;
+            lastScrollTime = currentTime;
+
+            // Animate smooth scroll
+            if (!isScrolling) {
+                isScrolling = true;
+                const startScroll = window.scrollY;
+                const targetScroll = Math.max(0, Math.min(startScroll + scrollVelocity, document.documentElement.scrollHeight - window.innerHeight));
+                const distance = targetScroll - startScroll;
+                const duration = 800; // milliseconds
+                let startTime = null;
+
+                function smoothScroll(currentTime) {
+                    if (startTime === null) startTime = currentTime;
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const easeProgress = easeInOutCubic(progress);
+
+                    window.scrollTo(0, startScroll + distance * easeProgress);
+
+                    if (progress < 1) {
+                        requestAnimationFrame(smoothScroll);
+                    } else {
+                        isScrolling = false;
+                        scrollVelocity = 0; // Reset velocity after animation
+                    }
+                }
+
+                requestAnimationFrame(smoothScroll);
+            }
+        }, { passive: false });
+
         document.addEventListener("DOMContentLoaded", async () => {
             updateVisitCounter();
             await loadDepoimentos();
             document.querySelector(".comment-form").addEventListener("submit", submitDepoimento);
         });
 
-        // Make video preview clicks open the video link in a new tab,
-        // while the "Assistir Vídeo" button opens the modal player.
+        // Make video preview clicks open the video link in a new tab
         document.addEventListener("click", (e) => {
-            // If a preview or its children were clicked, find the closest preview element
             const preview = e.target.closest('.video-preview');
             if (preview) {
                 const videoUrl = preview.getAttribute('data-video');
                 if (videoUrl) {
-                    // open in a new tab
                     window.open(videoUrl, '_blank', 'noopener');
                 }
             }
