@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Além da Substance - Saúde Mental</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">Além da Substância</div>
+        <nav>
+            <a href="#informacoes">Informações</a>
+            <a href="#videos">Vídeos</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato" class="btn-contato-nav">Contato</a>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION (HOME) -->
+    <main class="hero-container" id="home">
+        <section class="hero-left">
+            <span class="badge">● PROJETO ALÉM DA SUBSTÂNCIA</span>
+            <h1>Saúde Mental <br><em>cuidada</em> todos os dias.</h1>
+            <p>Um espaço de apoio e informação para desmistificar o tratamento psicológico e fortalecer o cuidado mental em Resende e além.</p>
+            
+            <div class="hero-buttons">
+                <a href="#sobre" class="btn-primary">Descubra Mais</a>
+                <a href="#contato" class="btn-secondary">Contato</a>
+            </div>
+            
+            <div class="mini-cards">
+                <div class="card-stat">
+                    <!-- CORREÇÃO AQUI: Adicionado id="contador" para o JavaScript atualizar -->
+                    <h2 id="contador">179</h2> 
+                    <p>Visitantes Registrados</p>
+                </div>
+                <div class="card-stat">
+                    <h2>+Cuidado</h2>
+                    <p>Informação e acolhimento</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="hero-right">
+            <div class="main-card">
+                <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=400" alt="Ilustração Mental" class="mascote-img">
+                <p class="card-text">Sua mente se fortalece quando você se permite cuidar. <strong>Ative sua calma.</strong></p>
+            </div>
+        </section>
+    </main>
+
+    <!-- SEÇÃO INFORMAÇÕES -->
+    <section id="informacoes" class="info-section">
+        <span class="section-badge">Informações</span>
+        <h2 class="section-title">Serviços de Saúde</h2>
+        <p class="section-subtitle">Saiba onde procurar ajuda!</p>
+
+        <div class="info-cards-container">
+            <div class="info-card">
+                <div class="card-border-top"></div>
+                <span class="card-tag">Adulto</span>
+                <h3>CAPS Casa Aberta</h3>
+                <p>É o espaço voltado para o acolhimento e tratamento de pessoas (geralmente a partir de 18 anos) que estão passando por sofrimentos mentais intensos ou crises graves. O objetivo é ajudar a pessoa a recuperar sua autonomia e se reintegrar à sociedade através de oficinas, conversas e cuidados médicos.</p>
+            </div>
+
+            <div class="info-card">
+                <div class="card-border-top"></div>
+                <span class="card-tag">Álcool e Drogas</span>
+                <h3>CAPS AD</h3>
+                <p>Voltado especialmente para o cuidado e suporte de pessoas que enfrentam dificuldades ou dependência com o uso de álcool, cigarro e outras substâncias. O foco aqui é o acolhimento, a redução de danos e a construção de novos projetos de vida, oferecendo atendimento médico, psicológico e atividades em grupo.</p>
+            </div>
+
+            <div class="info-card">
+                <div class="card-border-top"></div>
+                <span class="card-tag">Infanto-Juvenil</span>
+                <h3>CAPSi</h3>
+                <p>Esse é o lugar direcionado para crianças, adolescentes e jovens (até os 17/18 anos) que precisam de suporte emotional ou enfrentam sofrimento psíquico grave. Oferece atendimento especializado, oficinas terapêuticas e também apoia as famílias.</p>
+            </div>
+            
+            <div class="info-card">
+                <div class="card-border-top"></div>
+                <span class="card-tag">Consultas</span>
+                <h3>Ambulatório de Saúde Mental</h3>
+                <p>É o serviço voltado para o atendimento de casos moderados, que não exigem a permanência intensiva de um CAPS. Funciona por meio de consultas e acompanhamentos agendados com psicólogos e psiquiatras.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO VÍDEOS -->
+    <section id="videos" class="generic-section">
+        <span class="section-badge">Vídeos</span>
+        <h2 class="section-title">Conteúdo em <em>Vídeo</em></h2>
+        <p class="section-subtitle">Assista a conteúdos educativos e informativos sobre saúde mental e bem-estar.</p>
+
+        <div class="videos-cards-container">
+            <div class="video-card">
+                <div class="video-preview btn-play-trigger" data-video="https://youtube.com/embed/IJjCyYKkbZU?si=vxh-BDA81wg-3qQN">
+                    <img src="https://img.youtube.com/vi/IJjCyYKkbZU/0.jpg" alt="Capa do Vídeo">
+                    <div class="play-icon">▶</div>
+                </div>
+                <div class="video-content">
+                    <span class="video-tag">Introdução</span>
+                    <h3>O que é Saúde Mental?</h3>
+                    <p>Entenda os conceitos básicos sobre bem-estar emocional e a importância de quebrar tabus em torno do assunto.</p>
+                    <button class="btn-watch btn-play-trigger" data-video="https://youtube.com/embed/IJjCyYKkbZU?si=vxh-BDA81wg-3qQN">Assistir Vídeo</button>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-preview btn-play-trigger" data-video="https://youtube.com/embed/HHHiIle4SVA?si=tJ8ctzIvyEenSN2N">
+                    <img src="https://img.youtube.com/vi/HHHiIle4SVA/0.jpg" alt="Capa do Vídeo">
+                    <div class="play-icon">▶</div>
+                </div>
+                <div class="video-content">
+                    <span class="video-tag">Acolhimento</span>
+                    <h3>Como funciona o CAPS?</h3>
+                    <p>Conheça por dentro o atendimento dos Centros de Atenção Psicossocial e saiba como procurar ajuda especializada.</p>
+                    <button class="btn-watch btn-play-trigger" data-video="https://youtube.com/embed/HHHiIle4SVA?si=tJ8ctzIvyEenSN2N">Assistir Vídeo</button>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-preview btn-play-trigger" data-video="https://youtube.com/embed/26smId96smo?si=rQtb4ltxumGqIPi2">
+                    <img src="https://img.youtube.com/vi/26smId96smo/0.jpg" alt="Capa do Vídeo">
+                    <div class="play-icon">▶</div>
+                </div>
+                <div class="video-content">
+                    <span class="video-tag">Prevenção</span>
+                    <h3>Práticas de Autocuidado</h3>
+                    <p>Pequenas ações e hábitos do dia a dia que ajudam a fortalecer sua mente e ativar momentos de calma.</p>
+                    <button class="btn-watch btn-play-trigger" data-video="https://youtube.com/embed/26smId96smo?si=rQtb4ltxumGqIPi2">Assistir Vídeo</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="videoModal" class="video-modal">
+        <div class="video-modal-content">
+            <span class="video-modal-close">&times;</span>
+            <div class="video-responsive-container">
+                <iframe id="videoPlayer" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- SEÇÃO COMENTÁRIOS -->
+    <section id="sobre" class="generic-section">
+        <span class="section-badge">Comunidade</span>
+        <h2 class="section-title">Deixe seu <em>Depoimento</em></h2>
+        <p class="section-subtitle">Compartilhe sua visão, mensagem de apoio ou sugestão sobre o nosso espaço.</p>
+
+        <div class="comments-container">
+            <div class="comment-form-box">
+                <h3>Sua opinião importa</h3>
+                <form class="comment-form">
+                    <div class="input-group">
+                        <label for="comentario-nome">Nome (ou Anônimo)</label>
+                        <input type="text" id="comentario-nome" placeholder="Ex: Maria Souza" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="comentario-texto">Seu Comentário</label>
+                        <textarea id="comentario-texto" rows="5" placeholder="Escreva aqui o que achou do site ou sua mensagem..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Enviar Depoimento</button>
+                </form>
+            </div>
+
+            <div class="comments-mural">
+                <!-- Os depoimentos vindos do banco de dados serão injetados aqui -->
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO CONTATO -->
+    <section id="contato" class="contact-section">
+        <span class="section-badge">Contatos</span>
+        <h2 class="section-title">Canais de <em>Acolhimento</em>.</h2>
+        <p class="section-subtitle">Entre em contato diretamente com a unidade especializada para o seu caso.</p>
+
+        <div class="contact-cards-container">
+            <div class="contact-card">
+                <div class="card-border-top"></div>
+                <span class="card-tag">Adulto</span>
+                <h3>CAPS Casa Aberta</h3>
+                <p class="contact-info"><strong>📞 Telefone:</strong> (24) 3381-4200</p>
+                <p class="contact-info"><strong>📍 Endereço:</strong> R. Dr. João Maia, 112 - Centro, Resende - RJ</p>
+                <p class="contact-info"><strong>⏰ Horário:</strong> Segunda a Sexta, das 8h às 17h</p>
+            </div>
+
+            <div class="contact-card">
+                <div class="card-border-top"></div>
+                <span class="card-tag">Álcool e Drogas</span>
+                <h3>CAPS AD</h3>
+                <p class="contact-info"><strong>📞 Telefone:</strong> (24) 3360-5250</p>
+                <p class="contact-info"><strong>📍 Endereço:</strong> Av. Pres. Kennedy, 1432 - Jardim Aliança, Resende - RJ</p>
+                <p class="contact-info"><strong>⏰ Horário:</strong> Segunda a Sexta, das 8h às 17h</p>
+            </div>
+
+            <div class="contact-card">
+                <div class="card-border-top"></div>
+                <span class="card-tag">Infanto-Juvenil</span>
+                <h3>CAPSi</h3>
+                <p class="contact-info"><strong>📞 Telefone:</strong> (24) 3360-6101</p>
+                <p class="contact-info"><strong>📍 Endereço:</strong> R. Sarah de Carvalho, 230 - Vila Moderno, Resende - RJ</p>
+                <p class="contact-info"><strong>⏰ Horário:</strong> Segunda a Sexta, das 8h às 17h</p>
+            </div>
+
+            <div class="contact-card">
+                <div class="card-border-top"></div>
+                <span class="card-tag">Consultas Especializadas</span>
+                <h3>Ambulatório de Saúde Mental</h3>
+                <p class="contact-info"><strong>📞 Telefone:</strong> (24) 3381-4320</p>
+                <p class="contact-info"><strong>📍 Endereço:</strong> Posto de Saúde Central - Av. Marcílio Dias, Centro, Resende - RJ</p>
+                <p class="contact-info"><strong>⏰ Horário:</strong> Atendimento com agendamento prévio</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conexão do Front-end com o Back-end em Python -->
+    <script>
+        const API_URL = window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost"
+            ? "http://127.0.0.1:5000/api"
+            : `${window.location.origin}/api`;
+
+        async function updateVisitCounter() {
+            try {
+                const response = await fetch(`${API_URL}/visita`, { method: "POST" });
+                const data = await response.json();
+                document.getElementById("contador").innerText = data.total_visitantes;
+            } catch (error) {
+                console.error("Erro ao atualizar contador:", error);
+            }
+        }
+
+        async function loadDepoimentos() {
+            try {
+                const response = await fetch(`${API_URL}/depoimentos`);
+                const depoimentos = await response.json();
+                const mural = document.querySelector(".comments-mural");
+                mural.innerHTML = "";
+
+                depoimentos.forEach((depo) => {
+                    const card = document.createElement("div");
+                    card.className = "mural-card";
+                    card.innerHTML = `
+                        <div class="mural-card-header">
+                            <strong>${depo.nome}</strong>
+                            <span class="mural-date">Recentemente</span>
+                        </div>
+                        <p>"${depo.texto}"</p>
+                    `;
+                    mural.appendChild(card);
+                });
+            } catch (error) {
+                console.error("Erro ao carregar depoimentos:", error);
+            }
+        }
+
+        async function submitDepoimento(event) {
+            event.preventDefault();
+
+            const nome = document.getElementById("comentario-nome").value.trim() || "Anônimo";
+            const texto = document.getElementById("comentario-texto").value.trim();
+
+            if (!texto) {
+                return;
+            }
+
+            try {
+                await fetch(`${API_URL}/depoimentos`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ nome, texto }),
+                });
+
+                event.target.reset();
+                await loadDepoimentos();
+            } catch (error) {
+                console.error("Erro ao enviar depoimento:", error);
+            }
+        }
+
+        function initializeVideoModal() {
+            const modal = document.getElementById("videoModal");
+            const videoPlayer = document.getElementById("videoPlayer");
+            const closeBtn = document.querySelector(".video-modal-close");
+            const triggers = document.querySelectorAll(".btn-play-trigger");
+
+            function closeModal() {
+                modal.style.display = "none";
+                videoPlayer.src = "";
+            }
+
+            triggers.forEach((trigger) => {
+                trigger.addEventListener("click", () => {
+                    const videoUrl = trigger.getAttribute("data-video");
+                    videoPlayer.src = `${videoUrl}?autoplay=1`;
+                    modal.style.display = "flex";
+                });
+            });
+
+            closeBtn.addEventListener("click", closeModal);
+            window.addEventListener("click", (event) => {
+                if (event.target === modal) {
+                    closeModal();
+                }
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", async () => {
+            updateVisitCounter();
+            await loadDepoimentos();
+            document.querySelector(".comment-form").addEventListener("submit", submitDepoimento);
+            initializeVideoModal();
+    </script>
+    
+</body>
+</html>
