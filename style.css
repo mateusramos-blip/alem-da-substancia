@@ -348,7 +348,7 @@ button {
     height: 6px;
     background: linear-gradient(90deg, var(--secondary-dark), #7aa8b2, var(--secondary), #c5dfe7, var(--secondary-light), #8bb5b8);
     background-size: 300% 100%;
-    animation: wave 4s ease-in-out infinite;
+    animation: wave 10s ease-in-out infinite;
 }
 
 .info-card h3,
