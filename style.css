@@ -2,18 +2,26 @@
    Brand palette and global style variables
    ------------------------------------------------------------- */
 :root {
-    --bg: #f4f4ed;
-    --surface: #fcfbf5;
-    --surface-soft: #f7f6ef;
-    --text: #24302a;
-    --text-muted: #5f6b64;
-    --primary: #5d826e;
-    --secondary: #96B8C0;
-    --secondary-dark: #5a7a85;
-    --secondary-light: #D0E4EC;
-    --accent: #a15f47;
-    --border: #dad6c9;
-    --shadow: rgba(36, 48, 42, 0.08);
+    --bg: #f8fcff;
+    --surface: #ffffff;
+
+    --primary: #63b7d8;
+    --secondary: #8dd48a;
+
+    --primary-light: #dff4fb;
+    --secondary-light: #e6f7e5;
+
+    --text: #2d3e50;
+    --text-muted: #5b6770;
+
+    --accent: #63b7d8;
+    --border: #dceaf0;
+
+    --shadow: rgba(0,0,0,0.08);
+
+    --secondary-dark: #5ebf75;
+
+    --surface-soft: #f5fbff;
 }
 
 @keyframes wave {
@@ -42,10 +50,38 @@ html {
     scroll-padding-top: 96px; /* account for fixed navbar height */
 }
 
-body {
-    background-color: var(--bg);
-    color: var(--text);
-    min-height: 100vh;
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background-image: url("./img/endless-clouds.svg");
+    background-repeat: repeat;
+    background-size: 150px;
+
+    opacity: 0.035;
+
+    pointer-events: none;
+    z-index: 0;
+}
+
+/*Alert Box*/
+
+.alert-box {
+    margin-top: 40px;
+    max-width: 800px;
+    padding: 20px 30px;
+
+    background: #eaf7fc;
+    border-left: 5px solid #63b7d8;
+
+    border-radius: 16px;
+
+    color: #2d3e50;
+    font-size: 1rem;
+    line-height: 1.7;
+
+    box-shadow: 0 8px 20px rgba(99, 183, 216, 0.08);
 }
 
 /* make sections snap into place for a cleaner scrolling experience */
@@ -256,6 +292,13 @@ button {
     color: var(--text);
     line-height: 1.7;
     font-size: 1rem;
+}
+
+.card-central {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 100%;
+    max-width: 380px; /* ajuste conforme os outros cards */
 }
 
 /* -------------------------------------------------------------
