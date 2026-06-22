@@ -14,43 +14,36 @@
     <header class="navbar">
         <div class="logo">Mente em equilíbrio</div>
         <nav>
-            <a href="#informacoes">Informações</a>
-            <a href="#cuidados">Cuidados</a>
-            <a href="#contato">Contato</a>
-            <a href="#videos">Vídeos</a>
-            <a href="#sobre">Sobre</a>
+            <a href="index.html">Home</a>
+        <a href="informacoes.html">Informações</a>
+        <a href="cuidados.html">Cuidados</a>
+        <a href="sinaisdealerta.html">Sinais de Alerta</a>
+        <a href="contato.html">Contato</a>
+        <a href="videos.html">Vídeos</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="fontesconfiaveis.html">Fontes Confiaveis</a>
         </nav>
     </header>
 
     <!-- HERO SECTION (HOME) -->
-    <main class="hero-container" id="home">
+    <main class="hero-container" id="home" class="page active">
        <section class="hero-left">
             <span class="badge">● PROJETO Mente em equilíbrio</span>
             <h1>Mente em <br><em>Equilíbrio</em></h1>
             <p>
             Pequenas ações ajudam a cuidar da mente e do corpo.
             Informação, acolhimento e apoio podem fazer a diferença.
-            </p>
-
-            <div class="hero-buttons">
-                <a href="#cuidados" class="btn-primary">
-                    🌱 Cuidados Diários
-                </a>
-
-                <a href="#contato" class="btn-secondary">
-                    🤝 Buscar Apoio
-                </a>
-            </div>          
+            </p>          
             <p>Segundo o Ministério da Saúde, a saúde mental não é apenas a ausência de doenças, mas sim um estado de bem-estar onde o indivíduo consegue usar suas próprias habilidades para enfrentar os desafios e o estresse da rotina diária.</p>           
             <p>Ela é determinada por fatores biológicos, psicológicos e sociais. Isso significa que a realidade socioeconômica, o ambiente e as redes de apoio comunitárias impactam diretamente o nosso equilíbrio emocional. Cuidar da mente é um processo coletivo e um direito fundamental de todos.</p>  
             
             <div class="mini-cards">
-                <div class="card-stat">
+                <div class="card-stat card-with-border">
                     <!-- CORREÇÃO AQUI: Adicionado id="contador" para o JavaScript atualizar -->
                     <h2 id="contador">0</h2> 
                     <p>Visitantes Registrados</p>
                 </div>
-                <div class="card-stat">
+                <div class="card-stat card-with-border">
                     <h2>+Cuidado</h2>
                     <p>Informação e acolhimento</p>
                 </div>
@@ -58,7 +51,8 @@
         </section>
 
         <section class="hero-right">
-            <div class="main-card">
+            <div class="card-border-top"></div>
+            <div class="main-card card-with-border">
                 <img src="img/SaudeMental.png" class="mascote-img">
                 <p class="card-text">Sua mente se fortalece quando você se permite cuidar. <strong>Ative sua calma.</strong></p>
             </div>
@@ -66,354 +60,96 @@
     </main>
 
     <!-- SEÇÃO INFORMAÇÕES -->
-    <section id="informacoes" class="info-section">
-        <span class="section-badge">Informações</span>
-        <h2 class="section-title">Serviços de Saúde</h2>
-        <p class="section-subtitle">Saiba onde procurar ajuda!</p>
-
-        <div class="info-cards-container">
-            <div class="info-card">
-                <div class="card-border-top"></div>
-                <span class="card-tag">Adulto</span>
-                <h3>CAPS Casa Aberta</h3>
-                <p>É o espaço voltado para o acolhimento e tratamento de pessoas (geralmente a partir de 18 anos) que estão passando por sofrimentos mentais intensos ou crises graves. O objetivo é ajudar a pessoa a recuperar sua autonomia e se reintegrar à sociedade através de oficinas, conversas e cuidados médicos.</p>
-            </div>
-
-            <div class="info-card">
-                <div class="card-border-top"></div>
-                <span class="card-tag">Álcool e Drogas</span>
-                <h3>CAPS AD</h3>
-                <p>Voltado especialmente para o cuidado e suporte de pessoas que enfrentam dificuldades ou dependência com o uso de álcool, cigarro e outras substâncias. O foco aqui é o acolhimento, a redução de danos e a construção de novos projetos de vida, oferecendo atendimento médico, psicológico e atividades em grupo.</p>
-            </div>
-
-            <div class="info-card">
-                <div class="card-border-top"></div>
-                <span class="card-tag">Infanto-Juvenil</span>
-                <h3>CAPSi</h3>
-                <p>Esse é o lugar direcionado para crianças, adolescentes e jovens (até os 17/18 anos) que precisam de suporte emotional ou enfrentam sofrimento psíquico grave. Oferece atendimento especializado, oficinas terapêuticas e também apoia as famílias.</p>
-            </div>
-            
-            <div class="info-card">
-                <div class="card-border-top"></div>
-                <span class="card-tag">Consultas</span>
-                <h3>Ambulatório de Saúde Mental</h3>
-                <p>É o serviço voltado para o atendimento de casos moderados, que não exigem a permanência intensiva de um CAPS. Funciona por meio de consultas e acompanhamentos agendados com psicólogos e psiquiatras.</p>
-            </div>
-        </div>
-    </section>
+    
 
     <!-- Seção Cuidados -->
 
-    <section id="cuidados" class="generic-section">
+    
+    <!-- Seção Busca Ajuda-->
 
-        <span class="section-badge">
-            Autocuidado
-        </span>
-
-        <h2 class="section-title">
-            Pequenos Cuidados que Fazem <em>Diferença</em>
-        </h2>
-
-        <p class="section-subtitle">
-            Atividades simples podem ajudar a reduzir o estresse,
-            melhorar o humor e fortalecer a saúde mental.
-        </p>
-
-        <div class="info-cards-container">
-
-            <div class="info-card">
-                <div class="card-border-top"></div>
-                <span class="card-tag">Movimento</span>
-                <h3>🚶 Caminhada</h3>
-                <p>
-                    Ajuda a diminuir a ansiedade, reduzir o estresse e melhorar o sono.
-                </p>
-            </div>
-
-            <div class="info-card">
-                <div class="card-border-top"></div>
-                <span class="card-tag">Respiração</span>
-                <h3>🧘 Exercício Respiratório</h3>
-                <p>
-                    Inspire por 4 segundos, segure por 2 e solte por 6 segundos.
-                </p>
-            </div>
-
-            <div class="info-card">
-                <div class="card-border-top"></div>
-                <span class="card-tag">Relaxamento</span>
-                <h3>🤸 Alongamento</h3>
-                <p>
-                    Alivia tensões musculares e promove sensação de leveza.
-                </p>
-            </div>
-
-            <div class="info-card">
-                <div class="card-border-top"></div>
-                <span class="card-tag">Bem-estar</span>
-                <h3>💃 Movimento Livre</h3>
-                <p>
-                    Dançar ou se movimentar ajuda a liberar endorfina e melhorar o humor.
-                </p>
-            </div>
-
-            <div class="info-card">
-                <div class="card-border-top"></div>
-                <span class="card-tag">Reflexão</span>
-                <h3>📝 Diário Emocional</h3>
-                <p>
-                    Escrever sentimentos ajuda no autoconhecimento e organização emocional.
-                </p>
-            </div>
-
-            <div class="info-card">
-                <div class="card-border-top"></div>
-                <span class="card-tag">Gratidão</span>
-                <h3>🙏 Três Coisas Boas</h3>
-                <p>
-                    Registrar momentos positivos fortalece a percepção de bem-estar.
-                </p>
-            </div>
-
-        </div>
-
-    </section>
-
-<!-- Seção Busca Ajuda-->
-
-    <section class="info-section">
-
-        <span class="section-badge">
-            Atenção
-        </span>
-
-        <h2 class="section-title">
-            Quando Buscar <em>Ajuda</em>
-        </h2>
-
-        <p class="section-subtitle">
-            Alguns sinais podem indicar que é importante procurar apoio profissional. Reconhecer esses sinais é um passo importante para cuidar da sua saúde mental.
-        </p>
-
-        <div class="info-cards-container">
-
-            <div class="info-card">
-                <h3>😔 Tristeza Persistente</h3>
-                <p>
-                    Quando sentimentos de tristeza, desânimo ou falta de interesse permanecem por semanas e começam a afetar as atividades do dia a dia.
-                </p>
-            </div>
-
-            <div class="info-card">
-                <h3>😟 Ansiedade Intensa</h3>
-                <p>
-                    Preocupações constantes, sensação de medo excessivo, nervosismo frequente ou sintomas físicos que dificultam a rotina podem indicar a necessidade de apoio.
-                </p>
-            </div>
-
-            <div class="info-card">
-                <h3>🌙 Dificuldade para Dormir</h3>
-                <p>
-                    Alterações persistentes no sono, como insônia, dificuldade para descansar ou excesso de sono, podem impactar o bem-estar físico e emocional.
-                </p>
-            </div>
-
-            <div class="info-card card-central">
-                <h3>🚪 Isolamento Social</h3>
-                <p>
-                    Evitar amigos, familiares ou atividades que antes eram prazerosas pode ser um sinal de que algo não está bem e merece atenção.
-                </p>
-            </div>
-
-        </div>
-
-        <div class="alert-box">
-            💙 Procurar ajuda é um ato de cuidado consigo mesmo. Você não precisa enfrentar tudo sozinho.
-        </div>
-
-    </section>
-
+    
 
     <!-- SEÇÃO CONTATO -->
-    <section id="contato" class="contact-section">
-        <span class="section-badge">Contatos</span>
-        <h2 class="section-title">Canais de <em>Acolhimento</em>.</h2>
-        <p class="section-subtitle">Entre em contato diretamente com a unidade especializada para o seu caso.</p>
-
-        <div class="contact-cards-container">
-            <div class="contact-card">
-                <div class="card-border-top"></div>
-                <span class="card-tag">Adulto</span>
-                <h3>CAPS Casa Aberta</h3>
-                <p class="contact-info"><strong>📞 Telefone:</strong> <a href="tel:+552433814200">(24) 3381-4200</a></p>
-                <p class="contact-info"><strong>📍 Endereço:</strong> <a href="https://www.google.com/maps/search/?api=1&query=R.%20Dr.%20Jo%C3%A3o%20Maia%2C%20112%20Centro%20Resende%20RJ" target="_blank" rel="noopener">R. Dr. João Maia, 112 - Centro, Resende - RJ</a></p>
-                <p class="contact-info"><strong>⏰ Horário:</strong> Segunda a Sexta, das 8h às 17h</p>
-            </div>
-
-            <div class="contact-card">
-                <div class="card-border-top"></div>
-                <span class="card-tag">Álcool e Drogas</span>
-                <h3>CAPS AD</h3>
-                <p class="contact-info"><strong>📞 Telefone:</strong> <a href="tel:+552433605250">(24) 3360-5250</a></p>
-                <p class="contact-info"><strong>📍 Endereço:</strong> <a href="https://www.google.com/maps/search/?api=1&query=Av.%20Pres.%20Kennedy%2C%201432%20Jardim%20Alian%C3%A7a%20Resende%20RJ" target="_blank" rel="noopener">Av. Pres. Kennedy, 1432 - Jardim Aliança, Resende - RJ</a></p>
-                <p class="contact-info"><strong>⏰ Horário:</strong> Segunda a Sexta, das 8h às 17h</p>
-            </div>
-
-            <div class="contact-card">
-                <div class="card-border-top"></div>
-                <span class="card-tag">Infanto-Juvenil</span>
-                <h3>CAPSi</h3>
-                <p class="contact-info"><strong>📞 Telefone:</strong> <a href="tel:+552433606101">(24) 3360-6101</a></p>
-                <p class="contact-info"><strong>📍 Endereço:</strong> <a href="https://www.google.com/maps/search/?api=1&query=R.%20Sarah%20de%20Carvalho%2C%20230%20Vila%20Moderno%20Resende%20RJ" target="_blank" rel="noopener">R. Sarah de Carvalho, 230 - Vila Moderno, Resende - RJ</a></p>
-                <p class="contact-info"><strong>⏰ Horário:</strong> Segunda a Sexta, das 8h às 17h</p>
-            </div>
-
-            <div class="contact-card">
-                <div class="card-border-top"></div>
-                <span class="card-tag">Consultas Especializadas</span>
-                <h3>Ambulatório de Saúde Mental</h3>
-                <p class="contact-info"><strong>📞 Telefone:</strong> <a href="tel:+552433814320">(24) 3381-4320</a></p>
-                <p class="contact-info"><strong>📍 Endereço:</strong> <a href="https://www.google.com/maps/search/?api=1&query=Posto%20de%20Sa%C3%BAde%20Central%20Av.%20Marc%C3%ADlio%20Dias%20Centro%20Resende%20RJ" target="_blank" rel="noopener">Posto de Saúde Central - Av. Marcílio Dias, Centro, Resende - RJ</a></p>
-                <p class="contact-info"><strong>⏰ Horário:</strong> Atendimento com agendamento prévio</p>
-            </div>
-        </div>
-    </section>
-
+    
     <!-- SEÇÃO VÍDEOS -->
-    <section id="videos" class="generic-section">
-        <span class="section-badge">Vídeos</span>
-        <h2 class="section-title">Conteúdo em <em>Vídeo</em></h2>
-        <p class="section-subtitle">Assista a conteúdos educativos e informativos sobre saúde mental e bem-estar.</p>
-
-        <div class="videos-cards-container">
-            <div class="video-card">
-                <div class="card-border-top"></div>
-                <div class="video-preview btn-play-trigger" data-video="https://youtube.com/embed/IJjCyYKkbZU?si=vxh-BDA81wg-3qQN">
-                    <img src="https://img.youtube.com/vi/IJjCyYKkbZU/0.jpg" alt="Capa do Vídeo">
-                    <div class="play-icon">▶</div>
-                </div>
-                <div class="video-content">
-                    <span class="video-tag">Introdução</span>
-                    <h3>O que é Saúde Mental?</h3>
-                    <p>Entenda os conceitos básicos sobre bem-estar emocional e a importância de quebrar tabus em torno do assunto.</p>
-                </div>
-            </div>
-
-            <div class="video-card">
-                <div class="card-border-top"></div>
-                <div class="video-preview btn-play-trigger" data-video="https://youtube.com/embed/HHHiIle4SVA?si=tJ8ctzIvyEenSN2N">
-                    <img src="https://img.youtube.com/vi/HHHiIle4SVA/0.jpg" alt="Capa do Vídeo">
-                    <div class="play-icon">▶</div>
-                </div>
-                <div class="video-content">
-                    <span class="video-tag">Acolhimento</span>
-                    <h3>Como funciona o CAPS?</h3>
-                    <p>Conheça por dentro o atendimento dos Centros de Atenção Psicossocial e saiba como procurar ajuda especializada.</p>
-                </div>
-            </div>
-
-            <div class="video-card">
-                <div class="card-border-top"></div>
-                <div class="video-preview btn-play-trigger" data-video="https://youtube.com/embed/26smId96smo?si=rQtb4ltxumGqIPi2">
-                    <img src="https://img.youtube.com/vi/26smId96smo/0.jpg" alt="Capa do Vídeo">
-                    <div class="play-icon">▶</div>
-                </div>
-                <div class="video-content">
-                    <span class="video-tag">Prevenção</span>
-                    <h3>Práticas de Autocuidado</h3>
-                    <p>Pequenas ações e hábitos do dia a dia que ajudam a fortalecer sua mente e ativar momentos de calma.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div id="videoModal" class="video-modal">
-        <div class="video-modal-content">
-            <span class="video-modal-close">&times;</span>
-            <div class="video-responsive-container">
-                <iframe id="videoPlayer" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
-
+    
     <!-- SEÇÃO COMENTÁRIOS -->
-    <section id="sobre" class="generic-section">
-        <span class="section-badge">Comunidade</span>
-        <h2 class="section-title">Deixe seu <em>Depoimento</em></h2>
-        <p class="section-subtitle">Compartilhe sua visão, mensagem de apoio ou sugestão sobre o nosso espaço.</p>
 
-        <div class="comments-container">
-            <div class="comment-form-box">
-                <div class="card-border-top"></div>
-                <h3>Sua opinião importa</h3>
-                <form class="comment-form">
-                    <div class="input-group">
-                        <label for="comentario-nome">Nome (ou Anônimo)</label>
-                        <input type="text" id="comentario-nome" placeholder="Ex: Maria Souza" required>
-                    </div>
-                    <div class="input-group">
-                        <label for="comentario-texto">Seu Comentário</label>
-                        <textarea id="comentario-texto" rows="5" placeholder="Escreva aqui o que achou do site ou sua mensagem..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn-primary">Enviar Depoimento</button>
-                </form>
-            </div>
-
-            <div class="comments-mural">
-                <!-- Os depoimentos vindos do banco de dados serão injetados aqui -->
-            </div>
-        </div>
-    </section>
 
     <!-- Conexão do Front-end com o Back-end em Python -->
     <script>
-        const API_URL = window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost"
-            ? "http://127.0.0.1:5000/api"
-            : `${window.location.origin}/api`;
+            const API_URL = window.location.hostname === "localhost" ||
+                            window.location.hostname === "127.0.0.1"
+                ? "http://127.0.0.1:5000/api"
+                : "/api";
 
+        // =========================
+        // 🔧 UTILIDADE SEGURA
+        // =========================
+        function exists(selector) {
+            return document.querySelector(selector) !== null;
+        }
+
+        // =========================
+        // 📊 VISITAS (index ou onde tiver #contador)
+        // =========================
         async function updateVisitCounter() {
             try {
-                const response = await fetch(`${API_URL}/visita`, { method: "POST" });
+                const el = document.getElementById("contador");
+                if (!el) return;
+
+                const response = await fetch(`${API_URL}/visita`);
                 const data = await response.json();
-                document.getElementById("contador").innerText = data.total_visitantes;
+
+                el.innerText = data.total_visitantes;
             } catch (error) {
-                console.error("Erro ao atualizar contador:", error);
+                console.error("Erro contador:", error);
             }
         }
 
+        // =========================
+        // 💬 DEPOIMENTOS (somente página sobre)
+        // =========================
         async function loadDepoimentos() {
             try {
+                const mural = document.querySelector(".comments-mural");
+                if (!mural) return;
+
                 const response = await fetch(`${API_URL}/depoimentos`);
                 const depoimentos = await response.json();
-                const mural = document.querySelector(".comments-mural");
+
                 mural.innerHTML = "";
 
                 depoimentos.forEach((depo) => {
                     const card = document.createElement("div");
                     card.className = "mural-card";
                     card.innerHTML = `
-                        <div class="mural-card-header">
-                            <strong>${depo.nome}</strong>
-                            <span class="mural-date">Recentemente</span>
-                        </div>
+                        <strong>${depo.nome}</strong>
                         <p>"${depo.texto}"</p>
                     `;
                     mural.appendChild(card);
                 });
+
             } catch (error) {
-                console.error("Erro ao carregar depoimentos:", error);
+                console.error("Erro depoimentos:", error);
             }
         }
 
+        // =========================
+        // 📨 ENVIO DE DEPOIMENTO
+        // =========================
         async function submitDepoimento(event) {
             event.preventDefault();
 
-            const nome = document.getElementById("comentario-nome").value.trim() || "Anônimo";
-            const texto = document.getElementById("comentario-texto").value.trim();
+            const nomeEl = document.getElementById("comentario-nome");
+            const textoEl = document.getElementById("comentario-texto");
 
-            if (!texto) {
-                return;
-            }
+            if (!nomeEl || !textoEl) return;
+
+            const nome = nomeEl.value.trim() || "Anônimo";
+            const texto = textoEl.value.trim();
+
+            if (!texto) return;
 
             try {
                 await fetch(`${API_URL}/depoimentos`, {
@@ -424,29 +160,54 @@
 
                 event.target.reset();
                 await loadDepoimentos();
+
             } catch (error) {
-                console.error("Erro ao enviar depoimento:", error);
+                console.error("Erro envio:", error);
             }
         }
 
-        document.addEventListener("DOMContentLoaded", async () => {
-            updateVisitCounter();
-            await loadDepoimentos();
-            document.querySelector(".comment-form").addEventListener("submit", submitDepoimento);
-        });
+        // =========================
+        // 🎥 VÍDEOS (global)
+        // =========================
+        function initVideos() {
+            document.addEventListener("click", (e) => {
+                const preview = e.target.closest(".video-preview");
 
-        // Make video preview clicks open the video link in a new tab,
-        // while the "Assistir Vídeo" button opens the modal player.
-        document.addEventListener("click", (e) => {
-            // If a preview or its children were clicked, find the closest preview element
-            const preview = e.target.closest('.video-preview');
-            if (preview) {
-                const videoUrl = preview.getAttribute('data-video');
-                if (videoUrl) {
-                    // open in a new tab
-                    window.open(videoUrl, '_blank', 'noopener');
+                if (preview) {
+                    const url = preview.getAttribute("data-video");
+                    if (url) {
+                        window.open(url, "_blank", "noopener");
+                    }
                 }
+            });
+        }
+
+        // =========================
+        // 🚦 INIT PRINCIPAL
+        // =========================
+        document.addEventListener("DOMContentLoaded", () => {
+
+            // 📊 página index
+            if (exists("#contador")) {
+                updateVisitCounter();
             }
+
+            // 💬 página sobre
+            if (exists(".comments-mural")) {
+                loadDepoimentos();
+            }
+
+            if (exists(".comment-form")) {
+                document
+                    .querySelector(".comment-form")
+                    .addEventListener("submit", submitDepoimento);
+            }
+
+            // 🎥 vídeos (global)
+            if (exists(".video-preview")) {
+                initVideos();
+            }
+
         });
     </script>
     

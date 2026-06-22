@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mente em equilíbrio - Saúde Mental</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="logo">Mente em equilíbrio</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="informacoes.html">Informações</a>
+        <a href="cuidados.html">Cuidados</a>
+        <a href="sinaisdealerta.html">Sinais de Alerta</a>
+        <a href="contato.html">Contato</a>
+        <a href="videos.html">Vídeos</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="fontesconfiaveis.html">Fontes Confiaveis</a>
+    </nav>
+</header>
+
+<!-- CONTEÚDO -->
+<section id="sinais-alerta" class="generic-section">
+
+    <span class="section-badge">Sinais de Alerta</span>
+    <h2 class="section-title">Quando prestar <em>atenção</em></h2>
+
+    <p class="section-subtitle">
+        Sinais de alerta não são diagnósticos, mas indicam quando algo emocional pode precisar de mais cuidado e apoio.
+    </p>
+
+    <!-- VÍDEO -->
+    <div class="video-single-container">
+
+        <div class="video-card card-with-border">
+
+            <div class="video-preview btn-play-trigger"
+                 data-video="https://www.youtube.com/embed/OMe7nbzqfHE">
+
+                <img src="https://img.youtube.com/vi/OMe7nbzqfHE/0.jpg" alt="Capa do Vídeo">
+                <div class="play-icon">▶</div>
+
+            </div>
+
+            <div class="video-content">
+                <span class="video-tag">Sinais de Alerta</span>
+                <h3>Sinais de alerta na saúde mental</h3>
+                <p>Explicação rápida sobre sinais emocionais importantes.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- CARDS -->
+    <div class="info-cards-container">
+
+        <div class="info-card card-with-border">
+            <div class="card-tag">Emocionais</div>
+            <h3>Sinais emocionais</h3>
+            <p>Tristeza frequente, irritação constante, perda de interesse e vazio emocional.</p>
+        </div>
+
+        <div class="info-card card-with-border">
+            <div class="card-tag">Cognitivos</div>
+            <h3>Pensamentos e mente</h3>
+            <p>Dificuldade de concentração, pensamentos negativos e autocrítica excessiva.</p>
+        </div>
+
+        <div class="info-card card-with-border">
+            <div class="card-tag">Físicos</div>
+            <h3>Sinais no corpo</h3>
+            <p>Insônia, cansaço constante e mudanças no apetite.</p>
+        </div>
+
+        <div class="info-card card-with-border">
+            <div class="card-tag">Atenção</div>
+            <h3>Sinais mais intensos</h3>
+            <p>Isolamento social e sofrimento emocional intenso.</p>
+        </div>
+
+        <div class="info-card card-with-border">
+            <div class="card-tag">Importante</div>
+            <h3>Isso não significa</h3>
+            <p>Não é fraqueza nem diagnóstico automático, apenas um sinal de atenção.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- MODAL DO VÍDEO -->
+<div id="videoModal" class="video-modal">
+    <div class="video-modal-content">
+
+        <span class="video-modal-close">&times;</span>
+
+        <div class="video-responsive-container">
+            <iframe id="videoPlayer"
+                src=""
+                frameborder="0"
+                allow="autoplay; encrypted-media"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+    </div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+function initVideos() {
+
+    document.addEventListener("click", (e) => {
+        const preview = e.target.closest(".video-preview");
+        if (!preview) return;
+
+        const url = preview.getAttribute("data-video");
+
+        const iframe = document.getElementById("videoPlayer");
+        const modal = document.getElementById("videoModal");
+
+        iframe.src = url + "?autoplay=1";
+        modal.style.display = "flex";
+    });
+
+    const closeBtn = document.querySelector(".video-modal-close");
+
+    if (closeBtn) {
+        closeBtn.onclick = () => {
+            const modal = document.getElementById("videoModal");
+            const iframe = document.getElementById("videoPlayer");
+
+            modal.style.display = "none";
+            iframe.src = "";
+        };
+    }
+
+    window.onclick = (e) => {
+        const modal = document.getElementById("videoModal");
+
+        if (e.target === modal) {
+            modal.style.display = "none";
+            document.getElementById("videoPlayer").src = "";
+        }
+    };
+}
+
+document.addEventListener("DOMContentLoaded", initVideos);
+</script>
+
+</body>
+</html>

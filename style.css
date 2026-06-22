@@ -49,6 +49,13 @@ html {
     scroll-snap-type: y mandatory;
     scroll-padding-top: 96px; /* account for fixed navbar height */
 }
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    background: #f7fbff;
+}
 
 body::before {
     content: "";
@@ -154,17 +161,19 @@ button {
    Hero section
    ------------------------------------------------------------- */
 .hero-container {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1.1fr 1.4fr;
     align-items: center;
-    gap: 40px;
+    gap: 60px;
+
     padding: 140px 8% 100px;
     min-height: 100vh;
-    background: linear-gradient(135deg, var(--bg) 45%, #ece1d4 100%);
+
+    background: linear-gradient(135deg, #f7fbff 0%, #eef7f4 100%);
 }
 
 .hero-left {
-    max-width: 580px;
+    max-width: 620px;
 }
 
 .badge {
@@ -181,10 +190,7 @@ button {
 }
 
 .hero-left h1 {
-    font-size: clamp(3rem, 4vw, 4.75rem);
-    line-height: 1.02;
-    letter-spacing: -0.04em;
-    margin-bottom: 24px;
+    display: none;
 }
 
 .hero-left h1 em {
@@ -195,11 +201,21 @@ button {
 }
 
 .hero-left p {
-    color: var(--text-muted);
-    line-height: 1.8;
-    max-width: 540px;
-    margin-bottom: 35px;
-    font-size: 16px;
+    font-size: 1.05rem;
+    line-height: 2;
+    color: #4f5b66;
+    margin-bottom: 18px;
+}
+
+.hero-left p:first-of-type {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: #3f4b55;
+}
+
+.hero-left p + p {
+    border-left: 3px solid rgba(99, 183, 216, 0.25);
+    padding-left: 14px;
 }
 
 .hero-buttons {
@@ -243,15 +259,16 @@ button {
 
 .mini-cards {
     display: grid;
-    grid-template-columns: repeat(2, minmax(160px, 1fr));
-    gap: 18px;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 30px;
 }
 
 .card-stat {
-    background: var(--surface);
-    padding: 22px;
+    padding: 24px;
     border-radius: 20px;
-    box-shadow: 0 20px 40px var(--shadow);
+    background: white;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.06);
 }
 
 .card-stat h2 {
@@ -266,10 +283,9 @@ button {
 }
 
 .hero-right {
-    flex: 1;
-    max-width: 520px;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .main-card {
@@ -281,13 +297,13 @@ button {
     text-align: center;
 }
 
+
 .mascote-img {
     width: 100%;
-    max-width: 300px;
-    border-radius: 24px;
-    margin-bottom: 24px;
+    max-width: 620px;
+    margin: 0 auto;
+    display: block;
 }
-
 .card-text {
     color: var(--text);
     line-height: 1.7;
@@ -383,15 +399,23 @@ button {
     box-shadow: 0 25px 50px rgba(36, 48, 42, 0.12);
 }
 
-.card-border-top {
+.card-with-border {
+    position: relative;
+    overflow: hidden;
+    border-radius: 28px;
+}
+
+.card-with-border::before {
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 6px;
-    background: linear-gradient(90deg, var(--secondary-dark), #7aa8b2, var(--secondary), #c5dfe7, var(--secondary-light), #8bb5b8);
+    height: 8px;
+
+    background: linear-gradient(90deg, #63b7d8, #8dd48a, #ffffff);
     background-size: 300% 100%;
-    animation: wave 10s ease-in-out infinite;
+    animation: wave 8s linear infinite;
 }
 
 .info-card h3,
@@ -439,6 +463,11 @@ button {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
+}
+
+.video-single-container {
+    display: flex;
+    justify-content: center;
 }
 
 .video-card {
@@ -726,6 +755,10 @@ button {
     }
 
     .hero-container {
+    grid-template-columns: 1fr 1.6fr;
+}
+
+    .hero-container {
         padding-top: 120px;
     }
 }
@@ -794,4 +827,29 @@ button {
     .comments-container {
         gap: 24px;
     }
-}
+    }
+
+    .page {
+        display: none;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+
+    .page.active {
+        display: block;
+        opacity: 1;
+    }
+
+    .local-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 18px;
+    margin-bottom: 15px;
+
+    transition: transform 0.3s ease;
+    }
+
+    .local-img:hover {
+        transform: scale(1.03);
+    }

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mente em equilíbrio - Saúde Mental</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">Mente em equilíbrio</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="informacoes.html">Informações</a>
+        <a href="cuidados.html">Cuidados</a>
+        <a href="sinaisdealerta.html">Sinais de Alerta</a>
+        <a href="contato.html">Contato</a>
+        <a href="videos.html">Vídeos</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="fontesconfiaveis.html">Fontes Confiaveis</a>
+    </nav>
+</header>
+
+<section id="videos" class="generic-section" class="page">
+        <span class="section-badge">Vídeos</span>
+        <h2 class="section-title">Conteúdo em <em>Vídeo</em></h2>
+        <p class="section-subtitle">Assista a conteúdos educativos e informativos sobre saúde mental e bem-estar.</p>
+
+        <div class="videos-cards-container">
+            <div class="video-card card-with-border">
+                <div class="video-preview btn-play-trigger" data-video="https://youtube.com/embed/IJjCyYKkbZU?si=vxh-BDA81wg-3qQN">
+                    <img src="https://img.youtube.com/vi/IJjCyYKkbZU/0.jpg" alt="Capa do Vídeo">
+                    <div class="play-icon">▶</div>
+                </div>
+                <div class="video-content">
+                    <span class="video-tag">Introdução</span>
+                    <h3>O que é Saúde Mental?</h3>
+                    <p>Entenda os conceitos básicos sobre bem-estar emocional e a importância de quebrar tabus em torno do assunto.</p>
+                </div>
+            </div>
+
+            <div class="video-card card-with-border">
+                <div class="video-preview btn-play-trigger" data-video="https://youtube.com/embed/HHHiIle4SVA?si=tJ8ctzIvyEenSN2N">
+                    <img src="https://img.youtube.com/vi/HHHiIle4SVA/0.jpg" alt="Capa do Vídeo">
+                    <div class="play-icon">▶</div>
+                </div>
+                <div class="video-content">
+                    <span class="video-tag">Acolhimento</span>
+                    <h3>Como funciona o CAPS?</h3>
+                    <p>Conheça por dentro o atendimento dos Centros de Atenção Psicossocial e saiba como procurar ajuda especializada.</p>
+                </div>
+            </div>
+
+            <div class="video-card card-with-border">
+                <div class="video-preview btn-play-trigger" data-video="https://youtube.com/embed/26smId96smo?si=rQtb4ltxumGqIPi2">
+                    <img src="https://img.youtube.com/vi/26smId96smo/0.jpg" alt="Capa do Vídeo">
+                    <div class="play-icon">▶</div>
+                </div>
+                <div class="video-content">
+                    <span class="video-tag">Prevenção</span>
+                    <h3>Práticas de Autocuidado</h3>
+                    <p>Pequenas ações e hábitos do dia a dia que ajudam a fortalecer sua mente e ativar momentos de calma.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="videoModal" class="video-modal">
+        <div class="video-modal-content">
+            <span class="video-modal-close">&times;</span>
+            <div class="video-responsive-container">
+                <iframe id="videoPlayer" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+<script> 
+function initVideos() {
+    document.addEventListener("click", (e) => {
+        const preview = e.target.closest(".video-preview");
+
+        if (!preview) return;
+
+        const url = preview.getAttribute("data-video");
+
+        const iframe = document.getElementById("videoPlayer");
+        const modal = document.getElementById("videoModal");
+
+        iframe.src = url + "?autoplay=1";
+        modal.style.display = "flex";
+    });
+
+    document.querySelector(".video-modal-close").onclick = () => {
+        const modal = document.getElementById("videoModal");
+        const iframe = document.getElementById("videoPlayer");
+
+        modal.style.display = "none";
+        iframe.src = "";
+    };
+
+    window.onclick = (e) => {
+        const modal = document.getElementById("videoModal");
+
+        if (e.target === modal) {
+            modal.style.display = "none";
+            document.getElementById("videoPlayer").src = "";
+        }
+    };
+}
+
+document.addEventListener("DOMContentLoaded", initVideos);
+</script>
+
+</body>
+</html>
