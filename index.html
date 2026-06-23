@@ -599,10 +599,17 @@
                 const el = document.getElementById("contador");
                 if (!el) return;
 
-                const response = await fetch(`${API_URL}/visita`);
-                const data = await response.json();
+                const response = await fetch(`${API_URL}/visita`, {
+                    method: "POST"
+                });
 
+                if (!response.ok) {
+                    throw new Error(`Erro HTTP ${response.status}`);
+                }
+
+                const data = await response.json();
                 el.innerText = data.total_visitantes;
+
             } catch (error) {
                 console.error("Erro contador:", error);
             }
