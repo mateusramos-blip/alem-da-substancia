@@ -11,19 +11,21 @@
 </head>
 <body>
 
-    <header class="navbar">
-        <div class="logo">Mente em equilíbrio</div>
-        <nav>
-            <a href="index.html">Home</a>
-        <a href="informacoes.html">Informações</a>
-        <a href="cuidados.html">Cuidados</a>
-        <a href="sinaisdealerta.html">Sinais de Alerta</a>
-        <a href="contato.html">Contato</a>
-        <a href="videos.html">Vídeos</a>
-        <a href="sobre.html">Sobre</a>
-        <a href="fontesconfiaveis.html">Fontes Confiaveis</a>
-        </nav>
-    </header>
+   <header class="navbar">
+    <div class="logo">Mente em equilíbrio</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#sinais-alerta">Sinais de Alerta</a>
+        <a href="#informacoes">Informações</a>
+        <a href="#cuidados">Cuidados</a>        
+        <a href="#ajuda">Ajuda</a> 
+        <a href="#contato">Contato</a>
+        <a href="#videos">Vídeos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#fontes">Fontes Confiáveis</a>
+    </nav>
+</header>
 
     <!-- HERO SECTION (HOME) -->
     <main class="hero-container" id="home" class="page active">
@@ -59,22 +61,521 @@
         </section>
     </main>
 
+    <!-- Seção Sinais de Alerta -->
+
+    <!-- CONTEÚDO -->
+    <section id="sinais-alerta" class="generic-section">
+
+        <span class="section-badge">Sinais de Alerta</span>
+        <h2 class="section-title">Quando prestar <em>atenção</em></h2>
+
+        <p class="section-subtitle">
+            Sinais de alerta não são diagnósticos, mas indicam quando algo emocional pode precisar de mais cuidado e apoio.
+        </p>
+
+        <!-- VÍDEO -->
+        <div class="video-single-container">
+
+            <div class="video-card card-with-border">
+
+                <div class="video-preview btn-play-trigger"
+                    data-video="https://www.youtube.com/embed/OMe7nbzqfHE">
+
+                    <img src="https://img.youtube.com/vi/OMe7nbzqfHE/0.jpg" alt="Capa do Vídeo">
+                    <div class="play-icon">▶</div>
+
+                </div>
+
+                <div class="video-content">
+                    <span class="video-tag">Sinais de Alerta</span>
+                    <h3>Sinais de alerta na saúde mental</h3>
+                    <p>Explicação rápida sobre sinais emocionais importantes.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- CARDS -->
+        <div class="info-cards-container">
+
+            <div class="info-card card-with-border">
+                <div class="card-tag">Emocionais</div>
+                <h3>Sinais emocionais</h3>
+                <p>Tristeza frequente, irritação constante, perda de interesse e vazio emocional.</p>
+            </div>
+
+            <div class="info-card card-with-border">
+                <div class="card-tag">Cognitivos</div>
+                <h3>Pensamentos e mente</h3>
+                <p>Dificuldade de concentração, pensamentos negativos e autocrítica excessiva.</p>
+            </div>
+
+            <div class="info-card card-with-border">
+                <div class="card-tag">Físicos</div>
+                <h3>Sinais no corpo</h3>
+                <p>Insônia, cansaço constante e mudanças no apetite.</p>
+            </div>
+
+            <div class="info-card card-with-border">
+                <div class="card-tag">Atenção</div>
+                <h3>Sinais mais intensos</h3>
+                <p>Isolamento social e sofrimento emocional intenso.</p>
+            </div>
+
+            <div class="info-card card-with-border">
+                <div class="card-tag">Importante</div>
+                <h3>Isso não significa</h3>
+                <p>Não é fraqueza nem diagnóstico automático, apenas um sinal de atenção.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- MODAL DO VÍDEO -->
+    <div id="videoModal" class="video-modal">
+        <div class="video-modal-content">
+
+            <span class="video-modal-close">&times;</span>
+
+            <div class="video-responsive-container">
+                <iframe id="videoPlayer"
+                    src=""
+                    frameborder="0"
+                    allow="autoplay; encrypted-media"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+        </div>
+    </div>
+
     <!-- SEÇÃO INFORMAÇÕES -->
     
+    <section id="informacoes" class="info-section" class="page">
+        <span class="section-badge">Informações</span>
+        <h2 class="section-title">Serviços de Saúde</h2>
+        <p class="section-subtitle">Saiba onde procurar ajuda!</p>
+
+        <div class="info-cards-container">
+            <div class="info-card card-with-border">
+                <span class="card-tag">Adulto</span>
+                <h3>CAPS Casa Aberta</h3>
+                <p>É o espaço voltado para o acolhimento e tratamento de pessoas (geralmente a partir de 18 anos) que estão passando por sofrimentos mentais intensos ou crises graves. O objetivo é ajudar a pessoa a recuperar sua autonomia e se reintegrar à sociedade através de oficinas, conversas e cuidados médicos.</p>
+            </div>
+
+            <div class="info-card card-with-border">
+                <span class="card-tag">Álcool e Drogas</span>
+                <h3>CAPS AD</h3>
+                <p>Voltado especialmente para o cuidado e suporte de pessoas que enfrentam dificuldades ou dependência com o uso de álcool, cigarro e outras substâncias. O foco aqui é o acolhimento, a redução de danos e a construção de novos projetos de vida, oferecendo atendimento médico, psicológico e atividades em grupo.</p>
+            </div>
+
+            <div class="info-card card-with-border">
+                <span class="card-tag">Infanto-Juvenil</span>
+                <h3>CAPSi</h3>
+                <p>Esse é o lugar direcionado para crianças, adolescentes e jovens (até os 17/18 anos) que precisam de suporte emotional ou enfrentam sofrimento psíquico grave. Oferece atendimento especializado, oficinas terapêuticas e também apoia as famílias.</p>
+            </div>
+            
+            <div class="info-card card-with-border">
+                <span class="card-tag">Consultas</span>
+                <h3>Ambulatório de Saúde Mental</h3>
+                <p>É o serviço voltado para o atendimento de casos moderados, que não exigem a permanência intensiva de um CAPS. Funciona por meio de consultas e acompanhamentos agendados com psicólogos e psiquiatras.</p>
+            </div>
+        </div>
+    </section>
 
     <!-- Seção Cuidados -->
 
-    
+    <section id="cuidados" class="generic-section" class="page">
+
+        <span class="section-badge">
+            Autocuidado
+        </span>
+
+        <h2 class="section-title">
+            Pequenos Cuidados que Fazem <em>Diferença</em>
+        </h2>
+
+        <p class="section-subtitle">
+            Atividades simples podem ajudar a reduzir o estresse,
+            melhorar o humor e fortalecer a saúde mental.
+        </p>
+
+        <div class="info-cards-container">
+
+            <div class="info-card card-with-border">
+                <span class="card-tag">Movimento</span>
+                <h3>🚶 Caminhada</h3>
+                <p>
+                    Ajuda a diminuir a ansiedade, reduzir o estresse e melhorar o sono.
+                </p>
+            </div>
+
+            <div class="info-card card-with-border">
+                <span class="card-tag">Respiração</span>
+                <h3>🧘 Exercício Respiratório</h3>
+                <p>
+                    Inspire por 4 segundos, segure por 2 e solte por 6 segundos.
+                </p>
+            </div>
+
+            <div class="info-card card-with-border">
+                <span class="card-tag">Relaxamento</span>
+                <h3>🤸 Alongamento</h3>
+                <p>
+                    Alivia tensões musculares e promove sensação de leveza.
+                </p>
+            </div>
+
+            <div class="info-card card-with-border">
+                <span class="card-tag">Bem-estar</span>
+                <h3>💃 Movimento Livre</h3>
+                <p>
+                    Dançar ou se movimentar ajuda a liberar endorfina e melhorar o humor.
+                </p>
+            </div>
+
+            <div class="info-card card-with-border">
+                <span class="card-tag">Reflexão</span>
+                <h3>📝 Diário Emocional</h3>
+                <p>
+                    Escrever sentimentos ajuda no autoconhecimento e organização emocional.
+                </p>
+            </div>
+
+            <div class="info-card card-with-border">
+                <span class="card-tag">Gratidão</span>
+                <h3>🙏 Três Coisas Boas</h3>
+                <p>
+                    Registrar momentos positivos fortalece a percepção de bem-estar.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
     <!-- Seção Busca Ajuda-->
 
-    
+    <section id="ajuda" class="generic-section" class="page">
+
+        <span class="section-badge">
+            Atenção
+        </span>
+
+        <h2 class="section-title">
+            Quando Buscar <em>Ajuda</em>
+        </h2>
+
+        <p class="section-subtitle">
+            Alguns sinais podem indicar que é importante procurar apoio profissional. Reconhecer esses sinais é um passo importante para cuidar da sua saúde mental.
+        </p>
+
+        <div class="info-cards-container">
+
+            <div class="info-card">
+                <h3>😔 Tristeza Persistente</h3>
+                <p>
+                    Quando sentimentos de tristeza, desânimo ou falta de interesse permanecem por semanas e começam a afetar as atividades do dia a dia.
+                </p>
+            </div>
+
+            <div class="info-card">
+                <h3>😟 Ansiedade Intensa</h3>
+                <p>
+                    Preocupações constantes, sensação de medo excessivo, nervosismo frequente ou sintomas físicos que dificultam a rotina podem indicar a necessidade de apoio.
+                </p>
+            </div>
+
+            <div class="info-card">
+                <h3>🌙 Dificuldade para Dormir</h3>
+                <p>
+                    Alterações persistentes no sono, como insônia, dificuldade para descansar ou excesso de sono, podem impactar o bem-estar físico e emocional.
+                </p>
+            </div>
+
+            <div class="info-card card-central">
+                <h3>🚪 Isolamento Social</h3>
+                <p>
+                    Evitar amigos, familiares ou atividades que antes eram prazerosas pode ser um sinal de que algo não está bem e merece atenção.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="alert-box">
+            💙 Procurar ajuda é um ato de cuidado consigo mesmo. Você não precisa enfrentar tudo sozinho.
+        </div>
+
+    </section>
 
     <!-- SEÇÃO CONTATO -->
+
+    <section id="contato" class="contact-section" class="page">
+        <div class="contact-cards-container">
+            <span class="section-badge">Contatos</span>
+            <h2 class="section-title">Canais de <em>Acolhimento</em></h2>
+            <p class="section-subtitle">Entre em contato diretamente com a unidade especializada para o seu caso.</p>
+
+                <div class="contact-card card-with-border">
+
+                    <a href="https://maps.app.goo.gl/T2GJsQVPzbPy7DYF8"
+                    target="_blank"
+                    rel="noopener">
+
+                        <img src="img/casaberta.jpg"
+                            alt="Localização do CAPS Casa Aberta"
+                            class="local-img">
+
+                    </a>
+                    <span class="card-tag">Adulto</span>
+                    <h3>CAPS Casa Aberta</h3>
+                    <p class="contact-info"><strong>📞 Telefone:</strong> <a href="tel:+552433814200">(24) 3381-4200</a></p>
+                    <p class="contact-info"><strong>📍 Endereço:</strong> <a>R. Santo Antônio, 769 - Vila Julieta, Resende - RJ, 27521-081</a></p>
+                    <p class="contact-info"><strong>⏰ Horário:</strong> Segunda a Sexta, das 8h às 17h</p>
+                </div>
+
+                <div class="contact-card card-with-border">
+
+                    <a href="https://maps.app.goo.gl/ef5Z1fSyog8RXYqHA"
+                    target="_blank"
+                    rel="noopener">
+
+                        <img src="img/CAPSAD.jpg"
+                            alt="Localização do CAPS Casa Aberta"
+                            class="local-img">
+
+                    </a>
+                    <span class="card-tag">Álcool e Drogas</span>
+                    <h3>CAPS AD</h3>
+                    <p class="contact-info"><strong>📞 Telefone:</strong> <a href="tel:+552433605250">(24) 3360-5250</a></p>
+                    <p class="contact-info"><strong>📍 Endereço:</strong> <a>Av. Riachuelo, 31 - Liberdade, Resende - RJ, 27521-171</a></p>
+                    <p class="contact-info"><strong>⏰ Horário:</strong> Segunda a Sexta, das 8h às 17h</p>
+                </div>
+
+                <div class="contact-card card-with-border">
+
+                    <a href="https://maps.app.goo.gl/AobLEbhYr4zkPjjL7"
+                    target="_blank"
+                    rel="noopener">
+
+                        <img src="img/CAPSI.jpg"
+                            alt="Localização do CAPS Casa Aberta"
+                            class="local-img">
+
+                    </a>
+                    <span class="card-tag">Infanto-Juvenil</span>
+                    <h3>CAPSi</h3>
+                    <p class="contact-info"><strong>📞 Telefone:</strong> <a href="tel:+552433606101">(24) 3360-6101</a></p>
+                    <p class="contact-info"><strong>📍 Endereço:</strong> <a>Rua Altamiro O'relly, 120 - Vila Julieta, Resende - RJ, 27521-020</a></p>
+                    <p class="contact-info"><strong>⏰ Horário:</strong> Segunda a Sexta, das 8h às 17h</p>
+                </div>
+
+                <div class="contact-card card-with-border">
+
+                    <a href="https://maps.app.goo.gl/4q8m5Z5oKoqdT48A6"
+                    target="_blank"
+                    rel="noopener">
+
+                        <img src="img/ambulatorio.jpg"
+                            alt="Localização do CAPS Casa Aberta"
+                            class="local-img">
+
+                    </a>
+                    <span class="card-tag">Consultas Especializadas</span>
+                    <h3>Ambulatório de Saúde Mental</h3>
+                    <p class="contact-info"><strong>📞 Telefone:</strong> <a href="tel:+552433814320">(24) 3381-4320</a></p>
+                    <p class="contact-info"><strong>📍 Endereço:</strong> <a>Av. Riachuelo, 115 - Vila Julieta, Resende - RJ, 27521-171</a></p>
+                    <p class="contact-info"><strong>⏰ Horário:</strong> Atendimento com agendamento prévio</p>
+                </div>
+            </div>
+        </section>
     
     <!-- SEÇÃO VÍDEOS -->
+
+<section id="videos" class="generic-section" class="page">
+        <span class="section-badge">Vídeos</span>
+        <h2 class="section-title">Conteúdo em <em>Vídeo</em></h2>
+        <p class="section-subtitle">Assista a conteúdos educativos e informativos sobre saúde mental e bem-estar.</p>
+
+        <div class="videos-cards-container">
+            <div class="video-card card-with-border">
+                <div class="video-preview btn-play-trigger" data-video="https://youtube.com/embed/IJjCyYKkbZU?si=vxh-BDA81wg-3qQN">
+                    <img src="https://img.youtube.com/vi/IJjCyYKkbZU/0.jpg" alt="Capa do Vídeo">
+                    <div class="play-icon">▶</div>
+                </div>
+                <div class="video-content">
+                    <span class="video-tag">Introdução</span>
+                    <h3>O que é Saúde Mental?</h3>
+                    <p>Entenda os conceitos básicos sobre bem-estar emocional e a importância de quebrar tabus em torno do assunto.</p>
+                </div>
+            </div>
+
+            <div class="video-card card-with-border">
+                <div class="video-preview btn-play-trigger" data-video="https://youtube.com/embed/HHHiIle4SVA?si=tJ8ctzIvyEenSN2N">
+                    <img src="https://img.youtube.com/vi/HHHiIle4SVA/0.jpg" alt="Capa do Vídeo">
+                    <div class="play-icon">▶</div>
+                </div>
+                <div class="video-content">
+                    <span class="video-tag">Acolhimento</span>
+                    <h3>Como funciona o CAPS?</h3>
+                    <p>Conheça por dentro o atendimento dos Centros de Atenção Psicossocial e saiba como procurar ajuda especializada.</p>
+                </div>
+            </div>
+
+            <div class="video-card card-with-border">
+                <div class="video-preview btn-play-trigger" data-video="https://youtube.com/embed/26smId96smo?si=rQtb4ltxumGqIPi2">
+                    <img src="https://img.youtube.com/vi/26smId96smo/0.jpg" alt="Capa do Vídeo">
+                    <div class="play-icon">▶</div>
+                </div>
+                <div class="video-content">
+                    <span class="video-tag">Prevenção</span>
+                    <h3>Práticas de Autocuidado</h3>
+                    <p>Pequenas ações e hábitos do dia a dia que ajudam a fortalecer sua mente e ativar momentos de calma.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="videoModal" class="video-modal">
+        <div class="video-modal-content">
+            <span class="video-modal-close">&times;</span>
+            <div class="video-responsive-container">
+                <iframe id="videoPlayer" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
     
     <!-- SEÇÃO COMENTÁRIOS -->
 
+    <section id="sobre" class="generic-section" class="page">
+            <span class="section-badge">Comentários</span>
+            <h2 class="section-title">Deixe seu <em>Depoimento</em></h2>
+            <p class="section-subtitle">Compartilhe sua visão, mensagem de apoio ou sugestão sobre o nosso espaço.</p>
+
+            <div class="comments-container">
+                <div class="comment-form-box card-with-border">
+                    <h3>Sua opinião importa</h3>
+                    <form class="comment-form">
+                        <div class="input-group">
+                            <label for="comentario-nome">Nome (ou Anônimo)</label>
+                            <input type="text" id="comentario-nome" placeholder="Ex: Maria Souza" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="comentario-texto">Seu Comentário</label>
+                            <textarea id="comentario-texto" rows="5" placeholder="Escreva aqui o que achou do site ou sua mensagem..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">Enviar Depoimento</button>
+                    </form>
+                </div>
+
+                <div class="comments-mural">
+                    <!-- Os depoimentos vindos do banco de dados serão injetados aqui -->
+                </div>
+            </div>
+        </section>
+
+    <!-- SEÇÃO Fontes Confiaveis -->
+
+        <section id="fontes" class="generic-section" class="page">
+
+            <span class="section-badge">
+                Informação Segura
+            </span>
+
+            <h2 class="section-title">
+                Fontes <em>Confiáveis</em> sobre Saúde Mental
+            </h2>
+
+            <p class="section-subtitle">
+                Buscar informações em fontes oficiais ajuda a evitar mitos,
+                desinformação e orientações inadequadas sobre saúde mental.
+            </p>
+
+            <div class="info-cards-container">
+
+                <div class="info-card card-with-border">
+                    <span class="card-tag">Governo</span>
+                    <h3>🏛 Ministério da Saúde</h3>
+                    <p>
+                        Disponibiliza materiais educativos, campanhas de prevenção,
+                        orientações sobre saúde mental e informações sobre a Rede de Atenção Psicossocial.
+                    </p>
+                    <a href="https://www.gov.br/saude" target="_blank">
+                        Acessar site →
+                    </a>
+                </div>
+
+                <div class="info-card card-with-border">
+                    <span class="card-tag">Emergência</span>
+                    <h3>📞 CVV - Centro de Valorização da Vida</h3>
+                    <p>
+                        Oferece apoio emocional gratuito e sigiloso para pessoas que precisam conversar.
+                        Atendimento 24 horas por dia.
+                    </p>
+                    <a href="https://www.cvv.org.br" target="_blank">
+                        Acessar site →
+                    </a>
+                </div>
+
+                <div class="info-card card-with-border">
+                    <span class="card-tag">Saúde Pública</span>
+                    <h3>🏥 SUS</h3>
+                    <p>
+                        O Sistema Único de Saúde oferece atendimento psicológico e psiquiátrico
+                        por meio das unidades de saúde e dos CAPS.
+                    </p>
+                    <a href="https://www.gov.br/saude" target="_blank">
+                        Saiba mais →
+                    </a>
+                </div>
+
+                <div class="info-card card-with-border">
+                    <span class="card-tag">Pesquisa</span>
+                    <h3>📚 Fiocruz</h3>
+                    <p>
+                        Produz pesquisas científicas e materiais educativos sobre saúde,
+                        bem-estar emocional e qualidade de vida.
+                    </p>
+                    <a href="https://portal.fiocruz.br" target="_blank">
+                        Acessar site →
+                    </a>
+                </div>
+
+                <div class="info-card card-with-border">
+                    <span class="card-tag">Ciência</span>
+                    <h3>🔬 Organização Mundial da Saúde (OMS)</h3>
+                    <p>
+                        Referência internacional na produção de dados e recomendações
+                        relacionadas à saúde mental.
+                    </p>
+                    <a href="https://www.who.int" target="_blank">
+                        Acessar site →
+                    </a>
+                </div>
+
+                <div class="info-card card-with-border">
+                    <span class="card-tag">Educação</span>
+                    <h3>🎓 Biblioteca Virtual em Saúde</h3>
+                    <p>
+                        Reúne artigos científicos, publicações e conteúdos produzidos
+                        por instituições de saúde reconhecidas.
+                    </p>
+                    <a href="https://bvsalud.org" target="_blank">
+                        Acessar site →
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="alert-box">
+                <strong>Importante:</strong> As informações deste site possuem caráter
+                educativo e não substituem avaliação ou acompanhamento realizado por
+                profissionais de saúde qualificados.
+            </div>
+
+        </section>
 
     <!-- Conexão do Front-end com o Back-end em Python -->
     <script>
@@ -135,6 +636,18 @@
             }
         }
 
+        document.addEventListener("DOMContentLoaded", async () => {
+
+                const form = document.querySelector(".comment-form");
+
+                if (form) {
+                    form.addEventListener("submit", submitDepoimento);
+                }
+
+                updateVisitCounter();
+                loadDepoimentos();
+            });
+
         // =========================
         // 📨 ENVIO DE DEPOIMENTO
         // =========================
@@ -169,18 +682,41 @@
         // =========================
         // 🎥 VÍDEOS (global)
         // =========================
-        function initVideos() {
-            document.addEventListener("click", (e) => {
-                const preview = e.target.closest(".video-preview");
 
-                if (preview) {
+        function initVideos() {
+                document.addEventListener("click", (e) => {
+                    const preview = e.target.closest(".video-preview");
+
+                    if (!preview) return;
+
                     const url = preview.getAttribute("data-video");
-                    if (url) {
-                        window.open(url, "_blank", "noopener");
+
+                    const iframe = document.getElementById("videoPlayer");
+                    const modal = document.getElementById("videoModal");
+
+                    iframe.src = url + "?autoplay=1";
+                    modal.style.display = "flex";
+                });
+
+                document.querySelector(".video-modal-close").onclick = () => {
+                    const modal = document.getElementById("videoModal");
+                    const iframe = document.getElementById("videoPlayer");
+
+                    modal.style.display = "none";
+                    iframe.src = "";
+                };
+
+                window.onclick = (e) => {
+                    const modal = document.getElementById("videoModal");
+
+                    if (e.target === modal) {
+                        modal.style.display = "none";
+                        document.getElementById("videoPlayer").src = "";
                     }
-                }
-            });
-        }
+                };
+            }
+
+            document.addEventListener("DOMContentLoaded", initVideos);
 
         // =========================
         // 🚦 INIT PRINCIPAL
