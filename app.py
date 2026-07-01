@@ -19,8 +19,8 @@ def ensure_data_directory() -> None:
 
 def get_db_connection():
     if DATABASE_URL:
-        import psycopg2
-        return psycopg2.connect(DATABASE_URL)
+        import pg8000.native
+        return pg8000.native.Connection(DATABASE_URL)
     else:
         return sqlite3.connect(DATABASE)
 
